@@ -2,7 +2,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.atomic.AtomicReferenceArray;
 
 public class ListModel
 {
@@ -26,9 +25,7 @@ public class ListModel
         {
             thisNode = thisNode.getNextNode();
             array[i] = thisNode.getData();
-            System.out.println(array[i]);
         }
-        System.out.println();
         return array;
     }
 
@@ -75,28 +72,28 @@ public class ListModel
         return node;
     }
 
-    /*
     public int[] searchValue(Object data)
     {
-        ArrayList<Node> array = new ArrayList<Node>();
+        ArrayList<Integer> array = new ArrayList<>();
         Node node = rootNode;
 
-        while (true)
+        for (int i = 0; i < size; i++)
         {
             node = node.getNextNode();
-            if (node.getData() == data)
+            if (node.getData().equals(data))
             {
-                array.add(node);
+                array.add(i);
             }
         }
 
         int[] intArray = new int[array.size()];
-        for (int i = size; i < array.size(); i++)
+        for (int i = 0; i < array.size(); i++)
         {
-            intArray[i] = Integer.parseInt((String) array.get(i).getData());
+            intArray[i] = array.get(i);
+            System.out.println(intArray[i]);
         }
 
-        //return intArray;
+        return intArray;
     }
-    */
+
 }
